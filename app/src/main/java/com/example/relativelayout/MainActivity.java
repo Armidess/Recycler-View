@@ -1,8 +1,10 @@
 package com.example.relativelayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         Adapter adapter = new Adapter(list,this);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager= new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
+        StaggeredGridLayoutManager stagg=new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(stagg);
     }
 }
